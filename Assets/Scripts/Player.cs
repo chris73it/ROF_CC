@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace HeroicArcade
 {
-    InputController inputController;
-
-    void Start()
+    public class Player : MonoBehaviour
     {
-        inputController = GameManager.Instance.InputController;
-    }
+        InputController inputController;
 
-    void Update()
-    {
-        Debug.Log("H: " + inputController.Horizontal);
-        Debug.Log("V: " + inputController.Vertical);
-        Debug.Log("M: " + inputController.MouseInput);
+        void Start()
+        {
+            inputController = GameManager.Instance.InputController;
+        }
+
+        void Update()
+        {
+            Debug.Log("H: " + inputController.Horizontal);
+            Debug.Log("V: " + inputController.Vertical);
+            Debug.Log("M: " + inputController.MouseInput);
+        }
     }
 }

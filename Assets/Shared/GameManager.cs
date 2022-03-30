@@ -1,33 +1,36 @@
 using UnityEngine;
 
-public class GameManager
+namespace HeroicArcade
 {
-           static GameManager instance;
-    public static GameManager Instance
+    public class GameManager
     {
-        get
+        static GameManager instance;
+        public static GameManager Instance
         {
-            if (instance == null)
+            get
             {
-                instance = new GameManager();
-                instance.gameObject = new GameObject("_gameManager");
-                instance.gameObject.AddComponent<InputController>();
+                if (instance == null)
+                {
+                    instance = new GameManager();
+                    instance.gameObject = new GameObject("_gameManager");
+                    instance.gameObject.AddComponent<InputController>();
+                }
+                return instance;
             }
-            return instance;
         }
-    }
 
-           GameObject gameObject;
-           InputController inputController;
-    public InputController InputController
-    {
-        get
+        GameObject gameObject;
+        InputController inputController;
+        public InputController InputController
         {
-            if (inputController == null)
+            get
             {
-                inputController = instance.gameObject.GetComponent<InputController>();
+                if (inputController == null)
+                {
+                    inputController = instance.gameObject.GetComponent<InputController>();
+                }
+                return inputController;
             }
-            return inputController;
         }
     }
 }

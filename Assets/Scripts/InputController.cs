@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class InputController : MonoBehaviour
+namespace HeroicArcade
 {
-    public float Vertical;
-    public float Horizontal;
-    public Vector2 MouseInput;
-
-    private void Update()
+    public class InputController : MonoBehaviour
     {
-        Vertical = Input.GetAxis("Vertical");
-        Horizontal = Input.GetAxis("Horizontal");
-        MouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        public float Vertical;
+        public float Horizontal;
+        public Vector2 MouseInput;
+
+        private void Update()
+        {
+            Vertical = Input.GetAxis("Vertical");
+            Horizontal = Input.GetAxis("Horizontal");
+            MouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        }
     }
 }
